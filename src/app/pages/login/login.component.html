@@ -1,0 +1,57 @@
+<div class="container" [ngClass]="{'sign-up-mode':signUpMode,'sign-up-mode2':signUpMode2}">
+  <div class="signin-signup">
+      <form action="" class="sign-in-form">
+          <h2 class="title">Iniciar  Sesion</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>Outline form field</mat-label>
+            <input matInput placeholder="Placeholder">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+          <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username">
+          </div>
+          <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Contraseña">
+          </div>
+          <input type="submit" value="Iniciar Sesion" class="btn">
+          <p class="account-text">Don't have an account? <a href="#" (click)="signUpBtn2()">Registrarse</a></p>
+      </form>
+      <form action="" class="sign-up-form">
+          <h2 class="title">Registrarse</h2>
+          <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username">
+          </div>
+          <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="text" placeholder="Email">
+          </div>
+          <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Contraseña">
+          </div>
+          <input type="submit" value="Registrarse" class="btn">
+          <p class="account-text">Already have an account? <a href="#" (click)="signInBtn2()">Iniciar Sesion</a></p>
+      </form>
+  </div>
+  <div class="panels-container">
+      <div class="panel left-panel">
+          <div class="content">
+              <h3>Si ya tienes cuenta?</h3>
+              <p>Si ya posees cuenta inicia sesion</p>
+              <button class="btn" (click)="signInBtn()">Iniciar Sesion</button>
+          </div>
+          <img src="../../../assets/signin.svg" alt="" class="image">
+      </div>
+      <div class="panel right-panel">
+          <div class="content">
+              <h3>No tienes cuenta?</h3>
+              <p>Si no posee cuenta pulse el boton para registrarse</p>
+              <button class="btn" (click)="signUpBtn()">Registrarse</button>
+          </div>
+          <img src="../../../assets/signup.svg" alt="" class="image">
+      </div>
+  </div>
+</div>

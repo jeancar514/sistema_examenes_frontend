@@ -1,0 +1,25 @@
+<div class="container" [ngClass]="{'sign-up-mode':signUpMode,'sign-up-mode2':signUpMode2}">
+  <div class="signin-signup">
+      <app-register></app-register>
+      <app-login></app-login>
+  </div>
+  <div class="panels-container">
+      <div class="panel left-panel">
+          <div class="content">
+              <h3>Si ya tienes cuenta?</h3>
+              <p>Si ya posees cuenta inicia sesion</p>
+              <button class="btn" (click)="signInBtn()">Iniciar Sesion</button>
+          </div>
+          <img src="../../../assets/signin.svg" alt="" class="image">
+      </div>
+      <div class="panel right-panel">
+          <div class="content">
+              <h3>No tienes cuenta?</h3>
+              <p>Si no posee cuenta pulse el boton para registrarse</p>
+              <button class="btn" (click)="signUpBtn()">Registrarse</button>
+          </div>
+          <img src="../../../assets/signup.svg" alt="" class="image">
+      </div>
+  </div>
+</div>
+<h2>hola</h2>

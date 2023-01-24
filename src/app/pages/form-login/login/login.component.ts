@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -6,29 +8,32 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
+  formGroup: FormGroup;
+  
 
-  public user = {
-    username :'',
-    password :'',
-    nombre :'',
-    apellido :'',
-    email :'',
-    telefono :'',
-  }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  constructor(private userService: UserService){
+    this.formGroup = new FormGroup({
+      username:new FormControl('',[Validators.required]),
+      password:new FormControl('',[Validators.required]),
+    })
   }
 
-  constructor(private userService: UserService){}
-
-  formSumit(){
-    console.log(this.user);
-    if(this.user.username == '' || this.user.username ){
-      return;
+  submitLogin(){
+    //console.log(this.user);
+    console.log(this.formGroup.controls);
+    // if(this.user.username == '' || this.user.username ){
+    //   return;
+    // }
+    const user ={
+      "username" : this.formGroup.controls['username'].value,
+      "password" : this.formGroup.controls['password'].value,
+      "nombre":"leo",
+      "apellido":"sanchez",
+      "email":"leo@gmeil.com",
+      "telefono": "999985"
     }
-
-    this.userService.añadirUsuario(this.user).subscribe(
+    this.userService.añadirUsuario(user).subscribe(
       {
         next: (data) => {
           console.log(data)

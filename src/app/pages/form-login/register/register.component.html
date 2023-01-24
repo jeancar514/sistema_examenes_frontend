@@ -1,24 +1,33 @@
-<form action="" class="sign-up-form">
+<form action="" class="sign-up-form" [formGroup]="formGroup">
   <h2 class="title">Registrarse</h2>
   <mat-form-field appearance="outline">
     <mat-label>Nombre</mat-label>
-    <input matInput placeholder="Ingrese su nombre">
+    <input matInput placeholder="Ingrese su nombre" formControlName="name">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Apellido</mat-label>
-    <input matInput placeholder="Ingrese su apellido">
+    <input matInput placeholder="Ingrese su apellido" formControlName="apellido">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Nombre de usuario </mat-label>
-    <input matInput placeholder="Ingrese su nombre de usuario">
+    <input matInput placeholder="Ingrese su nombre de usuario" formControlName="username">
+    <mat-hint>*Debe ser unico</mat-hint>
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Contraseña</mat-label>
-    <input type="password" matInput placeholder="Ingrese su contraseña">
+    <input type="password" matInput placeholder="Ingrese su contraseña" formControlName="password">
+
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Ingrese su email" formControlName="email">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Telefono</mat-label>
-    <input matInput placeholder="Ingrese su numero de telefono">
+    <input matInput placeholder="Ingrese su numero de telefono" formControlName="phone">
   </mat-form-field>
-  <button mat-raised-button color="primary" type="submit">Registrarse</button>
+  <div fxLayout="row" fxLayoutGap="10px">
+    <button mat-raised-button color="primary" (click)="submitRegister()">Registrarse</button>
+    <button mat-raised-button color="warn" (click)="limpiarForm()">Limpiar</button>
+  </div>
  </form>

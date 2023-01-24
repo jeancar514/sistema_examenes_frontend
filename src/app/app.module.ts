@@ -12,6 +12,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FormLoginComponent } from './pages/form-login/form-login.component';
 import { RegisterComponent } from './pages/form-login/register/register.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { AlertComponent } from './components/alert/alert.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeComponent } from './pages/home/home.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
+
 
 
 @NgModule({
@@ -20,7 +29,9 @@ import { RegisterComponent } from './pages/form-login/register/register.componen
     NavbarComponent,
     LoginComponent,
     FormLoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +41,13 @@ import { RegisterComponent } from './pages/form-login/register/register.componen
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    ///
+    HttpClientModule,
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

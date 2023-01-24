@@ -18,13 +18,16 @@ export class FormLoginComponent {
     email :'',
     telefono :'',
   }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
   signInBtn(): void{
     this.signUpMode = false;
   }
+  signInBtn2(): void{
+    this.signUpMode = false;
+  }
   signUpBtn():void{
+    this.signUpMode = true;
+  }
+  signUpBtn2(): void{
     this.signUpMode = true;
   }
 
